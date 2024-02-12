@@ -1,1 +1,68 @@
 <p>Meu segundo component</p>
+
+    <!-- <li *ngFor="let product of productList$ | async">
+        {{ product.strDrink }}
+    </li> -->
+
+    <select (change)="changemodule($event)">
+        <option value="customer">Customer</option>
+        <option value="suplier">Suplier</option>
+        <option value="user">User</option>
+    </select>
+
+    @if (modulename == 'customer'){
+        <h2>Customer Page</h2>
+        <ul>
+            @for(item of customerlist(); track item.id; let idx=$index, count=$count, first=$first, last=$last, odd=$odd, even=$even){
+                <!-- <h3>count : {{count}}</h3> -->
+                @if (first==true){
+                    <li style="background-color: gray;">{{idx+1}} - {{item.name}}</li>
+                }@else if (last==true){
+                    <li style="background-color: olive;">{{idx+1}} - {{item.name}}</li>
+                }@else{
+                    <li>{{idx+1}} - {{item.name}}</li>
+                }
+            }
+        </ul>
+        
+    } @else if (modulename == 'suplier'){
+        <h2>Suplier Page</h2>
+        
+        @for(item of supplierlist(); track item.id; let idx=$index, count=$count, first=$first, last=$last, odd=$odd, even=$even){
+            <!-- <h3>count : {{count}}</h3> -->
+            @if (first==true){
+                <li style="background-color: gray;">{{idx+1}} - {{item.name}} - </li>
+            }@else if (last==true){
+                <li style="background-color: olive;">{{idx+1}} - {{idx+1}} - {{item.name}} </li>
+            }@else{
+                <li>{{idx+1}} - {{idx+1}} - {{item.name}}</li>
+            }
+            
+    }@empty {
+        <li>There are no items</li>
+            }
+    } @else {
+        <h2>User Page</h2>
+        @for(item of userlist(); track item.id; let idx=$index, count=$count, first=$first, last=$last, odd=$odd, even=$even){
+ 
+            @switch (item.country){
+                @case ('brasil'){
+                    <li style="color: yellow;">{{idx+1}} - {{item.name}} </li>
+                }
+                @case ('portugal'){
+                    <li style="color: red;">{{idx+1}} - {{item.name}} </li>
+                }
+                @case ('espanha'){
+                    <li style="color: purple;">{{idx+1}} - {{item.name}} </li>
+                }
+                @default{
+                    <li style="color: green">{{idx+1}} - {{item.name}} </li>
+                }
+            }
+
+        }@empty {
+            <li>There are no items</li>
+        }
+    }
+    
+ 

@@ -1,3 +1,39 @@
-<h1>{{title}}</h1>
-<app-meu-primeiro></app-meu-primeiro>
-<app-meu-segundo></app-meu-segundo>
+<h1 #headertext>Welcome to the jungle!</h1>
+@defer(on timer(1000ms)){
+    <h2>Slow Segundos</h2>
+}
+
+@defer(on interaction(headertext)){
+    <p>interaction</p>
+}@placeholder {
+    <div>data is avaliable soon... interaction</div>
+}
+
+@defer(on hover(headertext)){
+    <p>hover</p>
+}@placeholder {
+    <div>data is avaliable soon... hover</div>
+}
+
+@defer(on immediate){
+    <p>immediate</p>
+}@placeholder {
+    <div>data is avaliable soon... immediate</div>
+}
+<button (click)="showcontent()">mudar</button>
+@defer(when isloadcontent){
+    <p>when isloadcontent</p>
+}@placeholder {
+    <div>data is avaliable soon... when isloadcontent</div>
+}@loading(after 100ms; minimum 1s) {
+    <div>Loading...</div>
+}@error {
+    <div>Failed to Load</div>
+}
+
+@defer(on viewport){
+    <router-outlet></router-outlet>
+}@placeholder {
+    <div>data is avaliable soon...</div>
+}
+

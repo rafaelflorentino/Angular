@@ -1,0 +1,11 @@
+<p>list-render works!</p>
+<ul>
+    <li *ngFor="let animal of animals">
+        Nome: {{[animal.name]}} <br/>
+        Tipo: {{[animal.type]}} <br/>
+        <button (click)="showAge(animal)" > Show age</button>
+        <button (click)="removeAnimal(animal)">Excluir</button>
+    </li>
+</ul>
+
+<h3>{{ animalDetails }}</h3>

@@ -1,0 +1,24 @@
+<p>First Component</p>
+
+<p>first-component works!</p>
+<p>Nome: {{nome}};<br/> Sobrenome: {{sobrenome}}.</p>
+
+<ul>
+    <li *ngFor="let hobie of hobbies">
+        {{ [hobie]}}
+    </li>
+</ul>
+
+<p>segundo hobbie: {{hobbies[1]}}</p>
+
+<ul>
+    @for (car of cars; track $index) {
+        <li>Carro: {{[car.name]}}; Ano: {{car.year}} </li>
+    }
+</ul>
+
+<h3>{{falar()}}</h3>
+
+<p>{{pai}}</p>
+
+<p>Email: {{userData.email}}; Tipo: {{userData.role}}</p>

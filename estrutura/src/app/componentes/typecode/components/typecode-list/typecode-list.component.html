@@ -1,0 +1,6 @@
+<ul *ngIf="typecode">
+    <li *ngFor="let type of typecode" (click) = typecodeevents.emit(type)>
+        {{ type.title }}
+    </li>
+  </ul>
+  

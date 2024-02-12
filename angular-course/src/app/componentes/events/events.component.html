@@ -1,0 +1,11 @@
+
+<p *ngIf="show">Exibindo mensagem</p>
+
+<button (click)="showMessage()">Clique aqui</button>
+
+
+<p>O número é: {{num}} </p>
+<button (click)="incrementar()">Incrementar</button>
+
+<p>O número do pai é: {{myNumber}}</p>
+<app-change-number (changeNumber)="onChangeNumber()"></app-change-number>

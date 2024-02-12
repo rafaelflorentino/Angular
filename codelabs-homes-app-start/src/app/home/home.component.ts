@@ -43,4 +43,6 @@ export class HomeComponent {
       housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
     );
   }
+
+  
 }

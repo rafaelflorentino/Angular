@@ -1,0 +1,10 @@
+<h2 [ngStyle]="{ 'font-size': size +'px', 'font-family': font, color: color }">Diretiva de Estilo!</h2>
+<h3 [ngClass]="classes">Diretiva de Classe</h3>
+<h3 [ngClass]="underline">Diretiva Classe</h3>
+
+<p *ngIf="canShow">Diretiva IF = True</p>
+
+<p *ngIf="name === 'rafael'; else nameNotFound ">Nome: {{name}}</p>
+<ng-template #nameNotFound>
+    <p>O nome não foi encontrado</p>
+</ng-template>
