@@ -1,0 +1,28 @@
+<h1>Forms</h1>
+<form [formGroup]="form" (submit)="submitApplication()" #formDir="ngForm">
+    <label for="first-name">First Name</label>
+    <input  id="first-name" type="text" formControlName="firstName">
+
+    <div *ngIf="firstName.invalid && formDir.submitted">
+        <p *ngIf="firstName.errors?.['required']">Nome inválido</p>
+    </div> 
+
+    <label for="last-name">Last Name</label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+    <div *ngIf="firstName.invalid && formDir.submitted">
+        <p *ngIf="lastName.errors?.['required']">Sobrenome inválido</p>
+    </div> 
+
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email">
+
+    <div *ngIf="firstName.invalid && formDir.submitted">
+        <p *ngIf="email.errors?.['required']">E-mail inválido</p>
+    </div> 
+
+    <button type="submit" class="primary">Apply now</button>
+    
+  </form>
+
+ 

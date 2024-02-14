@@ -9,3 +9,14 @@
 </ul>
 
 <h3>{{ animalDetails }}</h3>
+
+<h1>Pessoas</h1>
+
+<ul>
+    <li *ngFor="let pessoa of pessoas">
+        Nome: <a routerLink="/list/{{ pessoa.id }}">{{[pessoa.name]}} </a><br/>
+        Tipo: {{[pessoa.type]}} <br/>
+        Idade: {{[pessoa.age]}} <br/> 
+        <button (click)="removePessoa(pessoa)">Excluir</button>
+    </li>
+</ul>

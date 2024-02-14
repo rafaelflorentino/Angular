@@ -1,5 +1,5 @@
 {
-  "name": "angular-course2",
+  "name": "formulario",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server --watch db.json",
-    "serve:ssr:angular-course2": "node dist/angular-course2/server/server.mjs"
+    "serve:ssr:formulario": "node dist/formulario/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +22,6 @@
     "@angular/router": "^17.1.0",
     "@angular/ssr": "^17.1.2",
     "express": "^4.18.2",
-    "json-server": "^1.0.0-alpha.23",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

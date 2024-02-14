@@ -1,0 +1,8 @@
+<h1>Reactive-form</h1>
+<form>
+    <label for="name">Name: </label>
+    <input id="name" type="text" [formControl]="name">
+    <button type="button" (click)="updateName()">Update Name</button>
+</form>
+
+<p>Value: {{ name.value }}</p>
