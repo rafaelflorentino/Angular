@@ -6,6 +6,8 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
 import { FormGroupComponent } from './components/form-group/form-group.component';
 import { FormBuilderServiceComponent } from './components/form-builder-service/form-builder-service.component';
 import { FormArrayComponent } from './components/form-array/form-array.component';
+import { FormMomentsComponent } from './components/form-moments/form-moments.component';
+import { NewMomentComponent } from './components/new-moment/new-moment.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +37,10 @@ export const routes: Routes = [
     {
         path: 'formArray',
         component: FormArrayComponent
+    },
+    {
+        path: 'moments',
+        component: NewMomentComponent
     }
+
 ];

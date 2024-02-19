@@ -8,7 +8,7 @@ export class HousingService {
  url = 'http://localhost:3000/locations';
   constructor() { }
 
-  async getAllHousingLocation() : Promise<HousingLocation[]> {
+  async getAllHousingLocation() : Promise<HousingLocation[] > {
     const data = await fetch(this.url);
     return await data.json() ?? [];
   }

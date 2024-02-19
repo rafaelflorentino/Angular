@@ -27,6 +27,7 @@ export class FormGroupComponent {
     onSubmit(){
       console.warn(this.profileForm.value);
       this.showInfo=true;
+      //this.profileForm.reset();
     }
 
     updateProfile() {

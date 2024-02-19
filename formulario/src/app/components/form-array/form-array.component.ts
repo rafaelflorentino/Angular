@@ -20,7 +20,7 @@ export class FormArrayComponent {
       street: [''],
       city: [''],
       state: [''],
-      zip: [''],
+      zip: ['', Validators.minLength(4)],
     }),
     aliases: this.formBuilder.array([this.formBuilder.control('')]),
   });
