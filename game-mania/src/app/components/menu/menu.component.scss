@@ -7,8 +7,12 @@
   }
   a{
     text-decoration: none;
-    color: white;
+    color: black;
   }
   mat-toolbar{
-    background: #adadad;
+    background: white;
+    border-bottom: 1px solid lightgray;
+  }
+  #logo{
+    margin-right: 20px;
   }
