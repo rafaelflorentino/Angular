@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 type BtnVariant = "primary" | "secondary"
 
 @Component({
-  selector: 'btn-primary',
+  selector: 'app-btn-primary',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './btn-primary.component.html',

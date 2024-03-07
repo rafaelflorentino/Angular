@@ -10,13 +10,13 @@
         <label for="email">Email</label>
         <input id="email" formControlName="email" type="text">
     
-        <btn-primary 
+        <app-btn-primary 
             btn-text="se inscreva" 
             variant="secondary"
             (submit)="onSubmit()"
             [disabled]="!newsletterForm.valid"
             [loading]="loading()"
-            ></btn-primary>
+            ></app-btn-primary>
     </form>
 
 </section>
