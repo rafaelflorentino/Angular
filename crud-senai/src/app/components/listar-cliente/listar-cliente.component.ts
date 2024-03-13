@@ -11,33 +11,48 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-listar-cliente',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterOutlet, RouterModule, MatButtonModule, MatToolbarModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterOutlet,
+    RouterModule,
+    MatButtonModule,
+    MatToolbarModule,
+    HttpClientModule,
+  ],
   templateUrl: './listar-cliente.component.html',
-  styleUrl: './listar-cliente.component.scss'
+  styleUrl: './listar-cliente.component.scss',
 })
 export class ListarClienteComponent {
   public clientes: Cliente[] = [];
 
-  constructor(private _clienteService:ClienteService, private _router:Router){}
+  constructor(
+    private _clienteService: ClienteService,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
     this.listarClientes();
   }
 
-  listarClientes():void{
-    this._clienteService.getClientes().subscribe(
-      retornaCliente =>{
-        this.clientes = retornaCliente.map(
-          item => {
-            return new Cliente(
-              item.id,
-              item.nome,
-              item.endereco
-            );
-          }
-        )
-      }
-    )
-  } 
+  listarClientes(): void {
+    this._clienteService.getClientes().subscribe((retornaCliente) => {
+      this.clientes = retornaCliente.map((item) => {
+        return new Cliente(item.id, item.nome, item.endereco);
+      });
+    });
+  }
 
+  excluir(id: number) {
+    this._clienteService.excluirCliente(id).subscribe(
+      (cliente) => {
+        this.listarClientes();
+      },
+      (err) => {
+        alert('Erro ao Excluir');
+      }
+    );
+    this._router.navigate(['/lista']);
+  }
 }
