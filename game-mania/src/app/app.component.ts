@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -12,6 +12,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -29,10 +31,24 @@ import { InicioComponent } from './components/inicio/inicio.component';
     MenuComponent,
     LoginComponent, 
     RodapeComponent,
-    InicioComponent],
+    InicioComponent, 
+    RouterLink,
+    ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy{
   title = 'Game Mania';
+  //mostrarMenu:boolean = true;
+
+  constructor(){}
+
+  ngOnInit(): void {
+
+  }
+
+  ngOnDestroy(): void {
+   // localStorage.clear();
+    
+  }
 }
