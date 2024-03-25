@@ -4,14 +4,19 @@
 
 span {
     padding: 5px 5px;
-}
+}S
 
 a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 img {
     height: 50px;
     width: 50px;
 }
+#menu-restrito{
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+   
+  }
